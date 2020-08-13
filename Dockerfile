@@ -11,10 +11,10 @@ ENV APP_ICON_URL=https://www.portfolio-performance.info/images/logo.png
 RUN apk --no-cache add ca-certificates wget && update-ca-certificates && \
     add-pkg \
         openjdk8-jre \
-		gtk+3.0
-		# dbus-x11 \
-		# dbus \
-		# webkit2gtk
+		gtk+3.0 \
+		dbus-x11 \
+		dbus \
+		webkit2gtk
 
 
 # Download & install App
