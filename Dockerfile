@@ -10,7 +10,7 @@ ENV APP_ICON_URL=https://www.portfolio-performance.info/images/logo.png
 # System config
 RUN apk --no-cache add ca-certificates wget && update-ca-certificates && \
     add-pkg \
-        openjdk8-jre \
+		openjdk8-jre \
 		gtk+3.0 \
 		dbus-x11 \
 		dbus \
@@ -26,7 +26,7 @@ RUN \
 	sed -i '1s;^;-configuration\n/opt/portfolio/configuration\n-data\n/opt/portfolio/workspace\n;' /opt/portfolio/PortfolioPerformance.ini && \
 	echo "osgi.nl=de" >> /opt/portfolio/configuration/config.ini && \
 	chmod -R 777 /opt/portfolio && \
-    install_app_icon.sh "$APP_ICON_URL"
+	install_app_icon.sh "$APP_ICON_URL"
 
 # Copy files to container
 ADD rootfs /
