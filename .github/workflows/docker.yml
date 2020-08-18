@@ -1,0 +1,41 @@
+name: Docker Image CI
+
+on: 
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - master
+
+env:
+  GITHUB_USER: ${{ secrets.GH_USER }}
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+jobs:
+
+  build-docker:
+    needs: build-site
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+        token: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build image & Publish to Registry
+      env:
+        SHA8: ${GITHUB_SHA::8}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        # <USER>/<REPO>/<DOCKER-IMAGE>
+        name: dtpnk/docker-portfolio/docker-portfolio
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        registry: docker.pkg.github.com
+        tags: "latest"
+
+
+
