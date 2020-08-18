@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches: 
-      - master
 
 env:
   GITHUB_USER: ${{ secrets.GH_USER }}
@@ -15,14 +12,10 @@ env:
 jobs:
 
   build-docker:
-    needs: build-site
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: 'true'
-        token: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build image & Publish to Registry
       env:
