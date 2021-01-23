@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: pwd && ls -lha
+    - run: "yes"
 
 
 
