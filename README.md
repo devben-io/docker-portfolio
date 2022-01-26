@@ -12,11 +12,11 @@ An open source tool to calculate the overall performance of an investment portfo
 # Change to repo folder
 $ cd <REPO-PATH>
 
-# build container w/ latest PP version
+# build container w/ latest Portfolio Performance version
 $ docker build -t portfolio:local .
 
-# build container w/ specific PP version
-$ docker build --build-arg VERSION="0.46.6" -t portfolio:local .
+# build container w/ specific Portfolio Performance version & different language
+$ docker build --build-arg VERSION="0.46.6" --build-arg LOCALE="de_DE" -t portfolio:local .
 ```
 
 ## Run
