@@ -1,5 +1,5 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:alpine-3.12-glibc AS base
+FROM jlesage/baseimage-gui:alpine-3.15-glibc-v3 AS base
 
 # System config
 RUN apk --no-cache add ca-certificates wget curl && update-ca-certificates && \
@@ -9,6 +9,7 @@ RUN apk --no-cache add ca-certificates wget curl && update-ca-certificates && \
 		dbus-x11 \
 		dbus \
 		webkit2gtk
+
 
 
 FROM base as app
