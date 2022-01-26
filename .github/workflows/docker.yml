@@ -6,8 +6,6 @@ on:
       - master
 
 env:
-  GITHUB_USER: ${{ secrets.GH_USER }}
-  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
 
@@ -25,9 +23,10 @@ jobs:
       with:
         # <USER>/<REPO>/<DOCKER-IMAGE>
         name: dtpnk/docker-portfolio/docker-portfolio
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        registry: docker.pkg.github.com
+        name: dtpnk/docker-portfolio/docker-portfolio
+        username: ${{ secrets.GH_USER }}
+        password: ${{ secrets.GH_TOKEN }}
+        registry: "ghcr.io"
         tags: "latest"
 
 
