@@ -3,7 +3,7 @@ services:
     build:
       context: .
       args:
-        LOCALE de_DE
+        LOCALE: de_DE
     container_name: portfolio
     restart: unless-stopped
     ports:
