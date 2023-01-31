@@ -27,6 +27,10 @@ $ docker run -d --name portfolio \
 	-e KEEP_APP_RUNNING=1 -e USER_ID=0 -e GROUP_ID=0 -e TZ="Europe/Berlin" \
 	portfolio:local
 ```
+OR use docker compose:
+```bash
+$ docker compose up -d
+```
 
 ## Use
 Use a browser and connect to Portfolio Performance via URL: `<IP-ADDRESS>:5800`
