@@ -9,6 +9,8 @@ An open source tool to calculate the overall performance of an investment portfo
 
 ## Docker Compose:
 ```bash
+$ git clone <REPO>
+$ cd <REPO-PATH>
 $ docker compose up -d
 ```
 
