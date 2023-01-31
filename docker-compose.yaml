@@ -3,7 +3,7 @@ services:
     build:
       context: .
       args:
-        - LOCALE="de_DE"
+        LOCALE de_DE
     container_name: portfolio
     restart: unless-stopped
     ports:
@@ -11,7 +11,7 @@ services:
     volumes:
       - ./workspace:/opt/portfolio/workspace
     environment:
-      - KEEP_APP_RUNNING=1
-      - USER_ID=0
-      - GROUP_ID=0
-      - TZ="Europe/Berlin"
+      KEEP_APP_RUNNING: 1
+      USER_ID: 0
+      GROUP_ID: 0
+      TZ: Europe/Berlin
