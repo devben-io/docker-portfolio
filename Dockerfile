@@ -1,5 +1,5 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:alpine-3.15-glibc-v3 AS base
+FROM jlesage/baseimage-gui:alpine-3.12-glibc-v3 AS base
 
 # System config
 RUN apk --no-cache add ca-certificates wget curl && update-ca-certificates && \

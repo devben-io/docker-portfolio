@@ -7,7 +7,14 @@ An open source tool to calculate the overall performance of an investment portfo
 ## Prerequisite
 * `docker` is installed, up and running
 
-## Build
+## Docker Compose:
+```bash
+$ git clone <REPO>
+$ cd <REPO-PATH>
+$ docker compose up -d
+```
+
+## Or build manually
 ```bash
 # Change to repo folder
 $ cd <REPO-PATH>
@@ -19,7 +26,7 @@ $ docker build -t portfolio:local .
 $ docker build --build-arg VERSION="0.46.6" --build-arg LOCALE="de_DE" -t portfolio:local .
 ```
 
-## Run
+## And run manually
 ```bash
 $ docker run -d --name portfolio \
 	-v ${PWD}/workspace:/opt/portfolio/workspace \
