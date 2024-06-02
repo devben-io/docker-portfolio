@@ -23,7 +23,11 @@ jobs:
         username: ${{ secrets.GH_USER }}
         password: ${{ secrets.GH_TOKEN }}
         registry: "ghcr.io"
-        tags: "latest"
+        platforms: linux/amd64, linux/arm64
+        tags: |
+          "latest"
+          "${SHA8}"
+          
 
 
 
